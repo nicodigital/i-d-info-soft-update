@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+const { items } = Astro.props;
+import "../css/layout/menu.css";
+const currentPath = Astro.url.pathname;
+---
+
+<nav>
+  {
+    items.map((item) => {
+      const currAnchor = currentPath + "/" + item[1];
+
+      return (
+        <a href={currAnchor}>
+          <span>
+            <Icon name={item[2]} size="2rem" />
+          </span>
+          <span>{item[0]}</span>
+        </a>
+      );
+    })
+  }
+</nav>

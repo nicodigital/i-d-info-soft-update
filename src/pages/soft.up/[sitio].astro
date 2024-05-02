@@ -1,0 +1,62 @@
+---
+import Layout from "../../layout/Layout.astro";
+import Screenshots from '../../components/Screenshots.astro'
+
+// Esta función solo es necesaria en caso de preRendered
+export async function getStaticPaths() {
+
+  const response = await fetch(import.meta.env.API_SOFT);
+  const getSites = await response.json();
+
+  return getSites.map((sitio) => {
+    let slug: string;
+    slug = sitio.slug;
+
+    return {
+      params: {
+        sitio: slug,
+      },
+    };
+  });
+}
+
+const { sitio } = Astro.params;
+const response = await fetch(import.meta.env.API_SOFT);
+const getSites = await response.json();
+const currSite = getSites.find((site) => site.slug == sitio);
+
+---
+<Layout
+  title={currSite.acfe_flexible_layout_title}
+  claim="El nuevo framework de maquetación de sitios de I+D"
+  description="El nuevo framework de maquetación de sitios de I+D"
+>
+  <div class="container pt-10 xg:pt-0">
+
+    <section id="tasks" class="row section-b md:mb-5 xg:mb-0">
+      <div class="col-[1/5] md:col-[1/13] xg:col-[7/13] pl-2 xg:pl-0">
+        <h2 class="text-h3 font-extrabold mb-2">Tareas realizadas:</h2>
+        <Fragment set:html={ currSite.acf.tasks }> </Fragment>
+      </div>
+    </section>
+
+    {
+      currSite.acf.caso.map((caso) =>{
+
+        let src = {
+          before_img : caso.before_img, 
+          after_img : caso.after_img
+        };
+
+        return <Screenshots
+          caseId={caso.acfe_flexible_layout_title}
+          src={src}
+          before={caso.before_txt}
+          title={caso.acfe_flexible_layout_title}
+          after={caso.after_txt}
+        />
+      }
+    )
+    }
+  </div>
+</Layout>

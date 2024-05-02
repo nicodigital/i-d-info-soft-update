@@ -1,0 +1,50 @@
+---
+// export const prerender = false;
+import Layout from "@/layout/Layout.astro";
+import Screenshots from '../components/Screenshots.astro'
+import getScreenshots from "@/data/screenshots.json";
+const screenshots = Object.values( getScreenshots);
+---
+
+<Layout
+  title="Everdem - Actualización de Software 2024"
+  claim="Informe de status de actualización"
+  description=""
+>
+
+  <div class="container">
+
+    <section id="tasks" class="row section-b">
+      <div class="col-[1/5] xg:col-[7/13]">
+
+          <h2 class="text-h3 font-extrabold mb-2">Tareas realizadas:</h2>
+
+          <ul class="list-disc leading-[2.2]">
+            <li>Respaldo de contenido </li>
+            <li>Respaldo de base de datos</li>
+            <li>Actualización del núcleo de Wordpress de 5.9 a 6.5.2</li>
+            <li>Actualización de plugins</li>
+            <li>Actualización del theme del sitio</li>
+            <li>Actualización de reglas del Firewall</li>
+            <li>Se actualizaron las claves SALT (wp-config.php)</li>
+            <li>Actualización y optimización de base de datos</li>
+          </ul>
+
+      </div>
+    </section>
+
+    {
+      screenshots.map((screen) => (
+        <Screenshots
+          caseId={screen.caseId}
+          src={screen.src}
+          before={screen.before}
+          title={screen.title}
+          after={screen.after}
+        />
+      ))
+    }
+
+  </div>
+
+</Layout>

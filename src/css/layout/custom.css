@@ -1,0 +1,17 @@
+#tasks {
+
+  ul {
+    list-style: disc;
+
+    li{
+      @apply mb-1;
+    }
+
+  }
+
+}
+
+
+
+
+
