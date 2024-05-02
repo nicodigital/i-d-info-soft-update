@@ -1,6 +1,6 @@
 :root {
   --container-gap: 1rem;
-  --sidebar-width: 5rem;
+  --sidebar-width: 7rem;
 }
 
 html {
@@ -58,6 +58,7 @@ body {
 @media (min-width: theme("screens.xg") ) {
   :root {
     --container-gap: 3rem;
+    --sidebar-width: 5rem;
   }
 }
 

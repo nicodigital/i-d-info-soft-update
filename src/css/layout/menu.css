@@ -6,13 +6,18 @@ nav {
         text-body
         transition-all ease-in-out duration-[275ms]	;
 
+
+    svg{
+      @apply size-3 xg:size-2;
+    }
+
     span {
 
       @apply bg-black text-white transition-all ease-in-out duration-[275ms];
 
       &:first-child {
         @apply flex justify-center items-center flex-1
-        w-[var(--sidebar-width)] py-[1.5rem] xg:py-1
+        w-[var(--sidebar-width)] py-2 xg:py-1
         font-extrabold;
       }
 

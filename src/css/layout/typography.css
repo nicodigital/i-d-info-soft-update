@@ -8,10 +8,10 @@ font-style: normal;
 
 :root {
   --html: 10px;
-  --text-big: 2.5rem;
-  --h1: 2.2rem;
-  --h2: 2rem;
-  --h3: 2rem;
+  --text-big: 2.2rem;
+  --h1: 2rem;
+  --h2: 1.8rem;
+  --h3: 1.8rem;
   --text-body: 1.6rem;
   --small: 1.4rem;
 }
