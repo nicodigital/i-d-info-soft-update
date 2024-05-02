@@ -8,7 +8,7 @@ const currentPath = Astro.url.pathname;
 <nav>
   {
     items.map((item) => {
-      const currAnchor = currentPath + "/" + item[1];
+      const currAnchor = currentPath + item[1];
 
       return (
         <a href={currAnchor}>
