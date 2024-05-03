@@ -11,7 +11,6 @@ import "@/css/global.css";
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 import Modals from "./Modals.astro";
-import Favicon from "@/components/Favicon.astro";
 import Seo from "@/components/Seo.astro";
 // import getSlug from '@/js/getSlug'
 
@@ -49,7 +48,7 @@ if( currPage === '' ){
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <Favicon />
+    <link rel="icon" href="/img/favicon.svg" sizes="any" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <Seo {title} {description} {image} {author} {author_url}  {robots} />
