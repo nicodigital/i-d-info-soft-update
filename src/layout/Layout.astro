@@ -22,7 +22,6 @@ const siteURL = import.meta.env.SITE;
 
 const {
   title = "Título de 65 caracteres",
-  claim = "Frase Coooool!",
   description = "Descripción de 150 caracteres",
   image = siteURL + 'img/1200x600.jpg',
   author = 'I+D',
@@ -53,7 +52,7 @@ if( currPage === '' ){
     <Favicon />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <Seo {title} {claim} {description} {image} {author} {author_url}  {robots} />
+    <Seo {title} {description} {image} {author} {author_url}  {robots} />
     <meta http-equiv="cleartype" content="on" />
     <meta name="MobileOptimized" content="width" />
     <meta name="HandheldFriendly" content="true" />

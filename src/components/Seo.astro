@@ -1,10 +1,10 @@
 ---
-const { title, claim, description, image, author, author_url, robots } = Astro.props;
+const { title, description, image, author, author_url, robots } = Astro.props;
 const site = import.meta.env.SITE;
 const baseUrl = import.meta.env.BASE_URL;
 ---
 <!-- Basic Metas -->
-<title>{title} — {claim}</title>
+<title>{title}</title>
 <meta name="description" content={ description } >
 
 <base href={ baseUrl } target="_self" />

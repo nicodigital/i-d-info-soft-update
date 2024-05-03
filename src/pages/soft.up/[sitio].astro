@@ -30,11 +30,12 @@ const response = await fetch(import.meta.env.API_SOFT);
 const getSites = await response.json();
 const currSite = getSites.find((site) => site.slug == sitio);
 
+
 ---
 <Layout
-  title={currSite.acfe_flexible_layout_title}
-  claim="El nuevo framework de maquetación de sitios de I+D"
-  description="El nuevo framework de maquetación de sitios de I+D"
+  title={` Actualización de Software • ${currSite.acf.site} — ${currSite.acf.fecha}`}
+  claim=""
+  description={`Reporte de Actualización de Software realizado el ${currSite.acf.fecha}, en el sitio web ${currSite.acf.site}`}
 >
   <div class="container pt-10 xg:pt-0">
 
