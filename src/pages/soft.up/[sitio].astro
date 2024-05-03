@@ -12,11 +12,16 @@ export async function getStaticPaths() {
     let slug: string;
     slug = sitio.slug;
 
-    return {
-      params: {
-        sitio: slug,
-      },
-    };
+    if( sitio.status == 'publish' ){
+      
+      return {
+        params: {
+          sitio: slug,
+        },
+      };
+
+    }
+
   });
 }
 
