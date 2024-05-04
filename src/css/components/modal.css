@@ -12,6 +12,7 @@
             backdrop-blur-sm
             translate-y-full
             transition-transform
+            pointer-events-none
             duration-500;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -28,7 +29,8 @@
             justify-center
             w-full
             xg:w-[85%]
-            min-h-[50vh];
+            min-h-[50vh]
+            opacity-0;
           
           figcaption{
             @apply flex justify-center text-white pb-2;
@@ -62,6 +64,15 @@
     }
 
     &[data-show="on"] {
+
+      pointer-events: auto;
+      overflow-y: auto;
       transform: translateY(0);
+
+      .modal-box{
+        @apply opacity-100;
+      }
+
     }
+
   }

@@ -13,12 +13,25 @@ const getSites = await response.json();
 const currSite = getSites.find((site) => site.slug == currPage);
 
 ---
-<footer class="container row pt-5 pb-10 xg:py-7" >
-    <div class="col-[1/3] md:col-[1/7] xg:col-[1/3]" >
-        <Brand width="w-40% md:w-full xg:w-25%" alt="Gridbox" ></Brand>
+<footer class="container row pt-5 pb-10 xg:py-7 items-end" >
+    <div class="col-[1/3] md:col-[1/3] xg:col-[1/3]" >
+        <Brand/>
     </div>
-    <div class="col-[3/5] md:col-[7/12] xg:col-[3/11] flex justify-center items-end flex-wrap">
-        Actualización de Software realizada el {currSite.acf.fecha}
+    <div class="xg:col-[3/5]">
+        <p class="text-small">
+            Nicolás Gonzalez <br>
+             Frontend Developer
+        </p>
+    </div>
+    <div class="col-[3/5] md:col-[7/12] xg:col-[7/9] flex flex-col text-small">
+        <p class="text-small">
+            Actualización de Software  realizada  el {currSite.acf.fecha}
+        </p>
+    </div>
+    <div class="col-[3/5] md:col-[7/12] xg:col-[10/12] flex flex-col text-small">
+        <a class="link-underline" href="mailto:nicolook.pro@gmail.com">nicolook.pro@gmail.com</a>
+        <a class="link-underline" href="https://nicowebsite.com" target='_blank' rel='noreferrer noopener' >nicowebsite.com</a>
+        <p>+598 98 398 010</p>
     </div>
     <div class="col-[1/5] xg:col-[11/13] flex justify-end">
         <GoTop/>

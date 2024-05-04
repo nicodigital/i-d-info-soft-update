@@ -15,6 +15,11 @@ html {
 
 body {
   @apply text-body;
+
+  &:has(.modal[data-show="on"]){
+    overflow: hidden !important;
+  }
+
 }
 
 [id]{scroll-margin-top: 8ex}

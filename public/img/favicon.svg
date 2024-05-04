@@ -1,9 +1,1 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<style>
-path {fill: #00000}
-@media (prefers-color-scheme: dark) {
-path { fill: #ffffff }
-}
-</style>
-<path d="M58.2462 42.78H84.3616V56.7553H58.2462V84H42.0123V56.7553H16.0381V42.78H42.1535V16.1H58.3874V42.78H58.2462Z" fill="black"/>
-</svg>
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M627.201 786L384.238 467.775V786H228V214H373.597L616.561 533.864V214H772V786H627.201Z" fill="#DD3545"/></svg>
