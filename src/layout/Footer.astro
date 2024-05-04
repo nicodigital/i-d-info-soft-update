@@ -2,8 +2,6 @@
 import getSlug from '@/js/getSlug';
 import Brand from "../components/Brand.astro";
 import GoTop from "../components/Gotop.astro";
-import { getHoy } from '../js/gethoy.js'
-const hoy = getHoy();
 
 const currentPath = Astro.url.pathname;
 const currPage = getSlug(currentPath);
