@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				'blue': '#151F6D',
-				'red': '#fe0000',
+				'red': '#dc3545',
 				'invalid': '#fe0000',
 			},
 			fontFamily: {

@@ -6,6 +6,14 @@ nav {
         text-body
         transition-all ease-in-out duration-[275ms]	;
 
+    &.active{
+
+      path{
+        fill: theme(colors.red);
+      }
+      
+    }
+
 
     svg{
       @apply size-3 xg:size-2;

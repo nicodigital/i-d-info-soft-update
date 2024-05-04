@@ -1,8 +1,9 @@
 import checkDevice from '../js/checkDevice'
 import smoothScroll from "../js/smoothscroll"
 import scrollMarkers from "../js/scrollMarkers"
+import menuScrollStatus from '../js/menuScrollStatus'
 import smartMenu from "../js/smartMenu"
-import menuMobile from '../js/menuMobile'
+// import menuMobile from '../js/menuMobile'
 
 /*/////////////////////////////////////////////////////////////////////*/
 /*///////////////////////////// GET BASIC /////////////////////////////*/
@@ -62,11 +63,11 @@ document.addEventListener('scroll', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-	menuMobile();
+	menuScrollStatus();
 });
 
 document.addEventListener('astro:after-swap', function () {
-	menuMobile();
+	menuScrollStatus();
 });
 
 
