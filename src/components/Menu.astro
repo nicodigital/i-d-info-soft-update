@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-const { items } = Astro.props;
 import slugify from "@/js/slugify";
 import getSlug from "@/js/getSlug";
 import "../css/layout/menu.css";
@@ -11,44 +10,33 @@ const currPage = getSlug(currentPath);
 const response = await fetch(import.meta.env.API_SOFT);
 const getSites = await response.json();
 const currSite = getSites.find((site) => site.slug == currPage);
-
-// Filtramos los items de la API y vemos si hay considencias con el menu
-// para renderizar los items existentes que coinicidan
-const navItemsFiltered = []; 
-
-items.map((item) => {
-
-  const matchingCasos = currSite.acf.caso.filter((caso) => {
-    const casoSlug = `#${slugify(caso.acfe_flexible_layout_title)}`;
-    return casoSlug === item[1];
-  });
-
-    if( matchingCasos.length > 0) {
-      navItemsFiltered.push( [item[0], item[1], item[2]] );
-    }
-    
-})
-
-// Agregamos el primer item de Tareas por defecto
-navItemsFiltered.unshift(['Tareas realizadas', '#tasks', 'mdi:format-align-justify' ]);  
-
 ---
 
 <nav>
+
+  <div class="anchor" data-anchor="#tasks" >
+    <span><Icon name="mdi:format-align-justify" size="2rem" /></span>
+    <span>Tareas realizadas</span>
+  </div>
+
   {
-    navItemsFiltered.map((item) => {
 
-      const currAnchor = currentPath + item[1];
+      currSite.acf.caso.map((sitio) => {
 
-      return(
-          <a href={currAnchor}>
+        const currSlug = slugify(sitio.acfe_flexible_layout_title);
+        const currAnchor = '#'+ currSlug;
+        const currIcon = sitio.icon ? sitio.icon : "mdi:alert-circle-outline";
+
+        return (
+          <div class="anchor" data-anchor={currAnchor} >
             <span>
-              <Icon name={item[2]} size="2rem" />
+              <Icon name={currIcon} size="2rem" />
             </span>
-            <span>{item[0]}</span>
-          </a>
-        );
- 
+             <span>{sitio.acfe_flexible_layout_title}</span>
+          </div>
+        )
+        
     })
+
   }
 </nav>

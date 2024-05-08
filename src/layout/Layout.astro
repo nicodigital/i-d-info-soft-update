@@ -2,7 +2,6 @@
 import "@fontsource/public-sans";
 import "@fontsource/public-sans/600.css"
 import "@fontsource/public-sans/700.css"
-import { ViewTransitions } from "astro:transitions";
 
 import getSlug from '@/js/getSlug';
 import getFirstUrlTerm from '@/js/getFirstUrlTerm';
@@ -12,9 +11,6 @@ import Header from "./Header.astro";
 import Footer from "./Footer.astro";
 import Modals from "./Modals.astro";
 import Seo from "@/components/Seo.astro";
-// import getSlug from '@/js/getSlug'
-
-// import Burger from "../components/Burger.astro";
 import Menu from "../components/Menu.astro";
 
 const siteURL = import.meta.env.SITE;
@@ -60,25 +56,14 @@ if( currPage === '' ){
       content="black-translucent"
     />
     <meta name="format-detection" content="telephone=no" />
-    <ViewTransitions />
   </head>
   <body id="top" data-page={dataPage} data-scroll="top" >
 
     <div class="flex w-full flex-1 gap-2">
 
       <aside class="w-[var(--sidebar-width)] fixed top-0 left-0 bg-black h-[100svh] z-50">
-        <div class="xg:pt-10 xg:pt-15">
-          <Menu items={
-            [
-                ['Tareas realizadas', '#tasks', 'mdi:format-align-justify' ],
-                ['Dashboard', '#dashboard', 'mdi:view-dashboard' ],
-                ['Núcleo Wordpress', '#nucleo-wordpress', 'mdi:wordpress'],
-                ['Plugins','#plugins', 'mdi:power-plug-outline'],
-                ['Themes','#themes', 'mdi:layers-triple-outline'],
-                ['Firewall','#firewall', 'mdi:shield-alert'],
-                ['Health Check','#health-check', 'mdi:star-four-points-circle'],
-            ]
-        } />
+        <div class="xg:pt-10">
+          <Menu/>
         </div>
       </aside>
 
