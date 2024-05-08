@@ -18,7 +18,8 @@ export default {
 				'h2': 'var(--h2)',
 				'h3': 'var(--h3)',
 				'body': 'var(--text-body)',
-				'small': 'var(--small)'
+				'small': 'var(--small)',
+				'tiny': 'var(--tiny)'
 			},	
 			fontWeight: {
 				normal: '400',
