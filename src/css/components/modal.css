@@ -5,9 +5,9 @@
             top-0
             left-0
             flex
-            items-center
             justify-center
             bg-black/80
+            overflow-y-auto
             z-[999]
             backdrop-blur-sm
             translate-y-full
@@ -27,6 +27,7 @@
             items-center
             justify-center
             w-full
+            xg:top-[4.5%]
             xg:w-[85%]
             min-h-[50vh];
           
