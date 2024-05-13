@@ -14,6 +14,7 @@ font-style: normal;
   --h3: 1.8rem;
   --text-body: 1.6rem;
   --small: 1.4rem;
+  --tiny: 1.4rem;
 }
 
 html {
@@ -68,6 +69,7 @@ p {
     --h2: 2.5rem;
     --h3: 2rem;
     --small: 1.6rem;
+    --tiny: 1.4rem;
   }
 }
 
