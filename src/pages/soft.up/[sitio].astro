@@ -31,6 +31,7 @@ const response = await fetch(import.meta.env.API_SOFT);
 const getSites = await response.json();
 const currSite = getSites.find((site) => site.slug == sitio);
 
+const LANG = currSite.acf.lang;
 
 ---
 <Layout
@@ -43,7 +44,11 @@ const currSite = getSites.find((site) => site.slug == sitio);
     <section id="tasks" class="scroll-case row section-b md:mb-5 xg:mb-0 xg:pt-4">
       <div class="xg:col-[1/5] hidden xg:flex items-end">
         <p class="text-tiny">
-          Todas las actualizaciones registradas en este informe pueden ser verificadas accediendo al administrador de Wordpress. Es importante tener presente, que tanto los plugins como los temas(themes), emiten actualizaciones periódicamente, por lo cual, puede suceder que la actualización registrada en este informe, no sea la última en el momento de acceder al sitio.
+          {LANG === "en" ? 
+            "All the updates registered in this report can be verified by accessing the Wordpress administrator. It is important to keep in mind that both plugins and themes issue updates periodically, so it may happen that the update registered in this report is not the latest at the time of accessing the site." : 
+          LANG === "pt" ? 
+            "Todas as atualizações registradas neste relatório podem ser verificadas acessando o administrador do Wordpress. É importante ter em mente que tanto os plugins quanto os temas emitem atualizações periodicamente, portanto, pode acontecer de a atualização registrada neste relatório não ser a mais recente no momento do acesso ao site." : 
+            "Todas las actualizaciones registradas en este informe pueden ser verificadas accediendo al administrador de Wordpress. Es importante tener presente, que tanto los plugins como los temas(themes), emiten actualizaciones periódicamente, por lo cual, puede suceder que la actualización registrada en este informe, no sea la última en el momento de acceder al sitio."}
         </p>
       </div>
       <div class="col-[1/5] md:col-[1/13] xg:col-[7/13] pl-2 xg:pl-0">
