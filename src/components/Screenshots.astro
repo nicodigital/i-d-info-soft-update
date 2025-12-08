@@ -7,10 +7,14 @@ const { caseId, src, before, title, after } = Astro.props;
 const slug = slugify(caseId);
 
 function checkScreens(objeto) {
-  if (objeto.before_img && objeto.after_img) {
+  if (objeto?.before_img && objeto?.after_img) {
     return true;
   }
   return false;
+}
+
+function hasBeforeImg(objeto) {
+  return objeto?.before_img?.url ? true : false;
 }
 ---
 
@@ -76,7 +80,7 @@ function checkScreens(objeto) {
       )
     }
     {
-      checkScreens(src) === false && ( // 1 solo screenshot
+      checkScreens(src) === false && hasBeforeImg(src) && ( // 1 solo screenshot
         <div class="col-[1/5] md:col-[1/13] xg:col-[1/13]">
           <figure class="items-center xg:items-start">
             <img

@@ -1,4 +1,5 @@
 export function slugify(text) {
+  if (!text) return '';
   const normalizedText = text
     .toString()
     .toLowerCase()
