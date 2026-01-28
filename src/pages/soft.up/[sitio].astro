@@ -9,21 +9,13 @@ export async function getStaticPaths() {
   const response = await fetch(import.meta.env.API_SOFT);
   const getSites = await response.json();
 
-  return getSites.map((sitio) => {
-    let slug: string;
-    slug = sitio.slug;
-
-    if( sitio.status == 'publish' ){
-      
-      return {
-        params: {
-          sitio: slug,
-        },
-      };
-
-    }
-
-  });
+  return getSites
+    .filter((sitio) => sitio.status === 'publish')
+    .map((sitio) => ({
+      params: {
+        sitio: sitio.slug,
+      },
+    }));
 }
 
 const { sitio } = Astro.params;

@@ -13,8 +13,8 @@ function checkScreens(objeto) {
   return false;
 }
 
-const before_webp = `${src.before_img.url}.webp`;
-const after_webp = `${src.after_img.url}.webp`;
+const before_webp = src.before_img?.url ? `${src.before_img.url}.webp` : '';
+const after_webp = src.after_img?.url ? `${src.after_img.url}.webp` : '';
 
 ---
 
